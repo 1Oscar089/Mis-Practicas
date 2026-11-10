@@ -1,0 +1,389 @@
+================================================================================
+          TEMARIO DE APRENDIZAJE DEFINITIVO: 365 CATEGORÍAS TAILWIND CSS v4
+================================================================================
+
+[BLOQUE 1: SINTAXIS BASE Y ARQUITECTURA CSS-FIRST (v4)]
+1. Configuración del sistema de diseño nativo con la directiva @theme
+2. Declaración de variables CSS personalizadas dentro de @theme (--color-*, --font-*)
+3. Uso del nuevo motor Rust (Oxide) y eliminación del archivo tailwind.config.js
+4. Importación integrada de librerías mediante @import "tailwindcss" nativo
+5. Detección automática de fuentes de contenido sin configuración de paths
+6. Sobreescritura total de tokens frente a la extensión del tema base en v4
+7. Creación de componentes CSS reutilizables mediante la directiva @apply
+8. Organización por capas de cascada nativas de CSS (Theme, Base, Utilities)
+9. Modificadores con sintaxis arbitraria estricta usando corchetes como bg-[#1a202c]
+10. Compilación de clases dinámicas completas vs concatenación de cadenas prohibida
+11. Inyección de estilos de reinicio global de elementos mediante la capa @layer base
+12. Generación de utilidades personalizadas de primer nivel usando la directiva @utility
+13. Registro de propiedades CSS en el motor mediante la arquitectura @property
+14. Creación de pseudo-clases customizadas en la hoja de estilos con @custom-variant
+15. Importación de estilos solo para referencia sin generar output mediante @reference
+16. Manejo de prefijos de proveedores automáticos nativos sin PostCSS Autoprefixer
+17. Optimización automática de compilación de microsegundos en entornos HMR con Vite
+18. Solución a conflictos de especificidad CSS en utilidades usando el modificador '!'
+19. Uso de funciones nativas de color como color-mix() expuestas internamente en la v4
+20. Ajuste dinámico de opacidad de variables de tema mediante la función --alpha()
+21. Acceso y cálculo dinámico de espaciados base mediante la función --spacing()
+
+[BLOQUE 2: COLORES DE FONDO (BG) Y MODERNA PALETA OKLCH (v4)]
+22. Manejo de la escala cromática base 50-950 con el modelo de color corregido OKLCH
+23. Colores neutros fríos de la v4: Slate (bg-slate-50 a bg-slate-950)
+24. Colores neutros puros de la v4: Gray (bg-gray-50 a bg-gray-950)
+25. Colores neutros cálidos de la v4: Zinc (bg-zinc-50 a bg-zinc-950)
+26. Colores neutros grisáceos: Neutral (bg-neutral-50 a bg-neutral-950)
+27. Colores neutros verdosos: Stone (bg-stone-50 a bg-stone-950)
+28. Tonos cálidos intensos: Red (bg-red-50 a bg-red-950)
+29. Tonos anaranjados brillantes: Orange (bg-orange-50 a bg-orange-950)
+30. Tonos ambarinos: Amber (bg-amber-50 a bg-amber-950)
+31. Tonos amarillos limpios: Yellow (bg-yellow-50 a bg-yellow-950)
+32. Tonos verdosos cítricos: Lime (bg-lime-50 a bg-lime-950)
+33. Tonos verdes naturales: Green (bg-green-50 a bg-green-950)
+34. Tonos verdes esmeralda: Emerald (bg-emerald-50 a bg-emerald-950)
+35. Tonos turquesas vivos: Teal (bg-teal-50 a bg-teal-950)
+36. Tonos cian eléctricos: Cyan (bg-cyan-50 a bg-cyan-950)
+37. Tonos celestes cielo: Sky (bg-sky-50 a bg-sky-950)
+38. Tonos azules corporativos: Blue (bg-blue-50 a bg-blue-950)
+39. Tonos azules índigo: Indigo (bg-indigo-50 a bg-indigo-950)
+40. Tonos morados: Violet (bg-violet-50 a bg-violet-950)
+41. Tonos púrpuras profundos: Purple (bg-purple-50 a bg-purple-950)
+42. Tonos fucsias vibrantes: Fuchsia (bg-fuchsia-50 a bg-fuchsia-950)
+43. Tonos rosados: Pink (bg-pink-50 a bg-pink-950)
+44. Tonos rojizos oscuros: Rose (bg-rose-50 a bg-rose-950)
+45. Uso de fondos negros absolutos en layouts: bg-black
+46. Uso de fondos blancos puros en tarjetas y contenedores: bg-white
+47. Aplicación de fondos transparentes para capas superiores: bg-transparent
+48. Opacidad de color integrada mediante barra diagonal en v4 (bg-red-500/50)
+49. Opacidad exacta del fondo usando porcentajes arbitrarios (bg-blue-600/[0.12])
+50. Fondos con colores hexadecimales arbitrarios instantáneos (bg-[#0f172a])
+51. Fondos con funciones rgb y rgba arbitrarias integradas (bg-[rgb(10,20,30)])
+52. Fondos basados en el espacio de color extendido de la v4 (bg-[oklch(0.6_0.25_140)])
+53. Fondos con variables CSS del entorno global inyectadas al vuelo (bg-[var(--mi-color)])
+54. Control del recorte de fondo en bordes del elemento: bg-clip-border
+55. Recorte de fondo ajustado al relleno interno: bg-clip-padding
+56. Recorte de fondo restringido a la caja de contenido: bg-clip-content
+57. Efecto de fondo recortado al contorno de textos de diseño: bg-clip-text
+58. Configuración del origen del fondo en la caja de borde: bg-origin-border
+59. Configuración del origen del fondo en la caja de padding: bg-origin-padding
+60. Configuración del origen del fondo en la caja de contenido: bg-origin-content
+
+[BLOQUE 3: DEGRADADOS, TRANSICIONES Y NUEVAS APIS DE GRADIENTES (v4)]
+61. Degradados lineales hacia arriba del contenedor: bg-gradient-to-t
+62. Degradados lineales estándar hacia abajo: bg-gradient-to-b
+63. Degradados lineales horizontales hacia la izquierda: bg-gradient-to-l
+64. Degradados lineales hacia la derecha: bg-gradient-to-r
+65. Degradados diagonales hacia la esquina superior derecha: bg-gradient-to-tr
+66. Degradados diagonales hacia la esquina superior izquierda: bg-gradient-to-tl
+67. Degradados diagonales hacia la esquina inferior derecha: bg-gradient-to-br
+68. Degradados diagonales hacia la esquina inferior izquierda: bg-gradient-to-bl
+69. Nuevos degradados lineales con ángulos personalizados arbitrarios de la v4: bg-linear-[45deg]
+70. Nuevos degradados con interpolaciones radiales directas en v4: bg-radial
+71. Nuevos degradados con estructuras cónicas complejas en v4: bg-conic
+72. Definición del punto de origen de color en degradados: from-{color}-{escala}
+73. Modificación de la opacidad del color de origen del degradado: from-blue-500/40
+74. Control del punto de parada medio o de transición intermedia: via-{color}-{escala}
+75. Modificación de la opacidad en la parada intermedia del degradado: via-purple-500/20
+76. Definición del punto final de color del degradado: to-{color}-{escala}
+77. Modificación de la opacidad del color final del degradado: to-pink-500/80
+78. Ajuste de posiciones porcentuales exactas de paradas (from-indigo-500_10%)
+79. Ajuste de posiciones porcentuales para paradas intermedias (via-sky-500_50%)
+80. Ajuste de posiciones porcentuales para paradas de cierre (to-emerald-500_90%)
+81. Comportamiento del fondo fijo respecto al viewport del navegador: bg-fixed
+82. Comportamiento del fondo dependiente del scroll local del contenedor: bg-local
+83. Comportamiento del fondo con scroll estándar integrado del elemento: bg-scroll
+
+[BLOQUE 4: ESPACIADO, MÁRGENES (MARGIN/PADDING) Y TAMAÑOS (SIZING)]
+84. Relleno interno uniforme en los cuatro costados del contenedor: p-{tamaño}
+85. Relleno interno exclusivo en el eje horizontal izquierdo y derecho: px-{tamaño}
+86. Relleno interno exclusivo en el eje vertical superior e inferior: py-{tamaño}
+87. Relleno interno aplicado únicamente en el borde superior: pt-{tamaño}
+88. Relleno interno aplicado únicamente en el borde derecho: pr-{tamaño}
+89. Relleno interno aplicado únicamente en el borde inferior: pb-{tamaño}
+90. Relleno interno aplicado únicamente en el borde izquierdo: pl-{tamaño}
+91. Relleno interno milimétrico con valores arbitrarios específicos (p-[13px])
+92. Margen externo uniforme en los cuatro costados del contenedor: m-{tamaño}
+93. Margen externo exclusivo en el eje horizontal izquierdo y derecho: mx-{tamaño}
+94. Margen externo exclusivo en el eje vertical superior e inferior: my-{tamaño}
+95. Margen externo aplicado únicamente en el borde superior: mt-{tamaño}
+96. Margen externo aplicado únicamente en el borde derecho: mr-{tamaño}
+97. Margen externo aplicado únicamente en el borde inferior: mb-{tamaño}
+98. Margen externo aplicado únicamente en el borde izquierdo: ml-{tamaño}
+99. Centrado automático horizontal de bloques contenedores en la página: mx-auto
+100. Márgenes externos de valor negativo para solapamiento de capas (-mt-4)
+101. Márgenes milimétricos con valores arbitrarios específicos (m-[2.2rem])
+102. Espaciado automático vertical entre elementos hijos directos: space-y-{tamaño}
+103. Espaciado automático horizontal entre elementos hijos directos: space-x-{tamaño}
+104. Inversión del orden de los márgenes intermedios en listas: space-y-reverse
+105. Ancho fijo basado en la escala por defecto de Tailwind CSS: w-{tamaño}
+106. Ancho fluido basado en porcentajes exactos de fracciones comunes: w-1/2
+107. Ancho total equivalente al 100% de la caja disponible del padre: w-full
+108. Ancho ajustado al tamaño de la pantalla del dispositivo: w-screen
+109. Ancho mínimo basado en el contenido intrínseco del elemento: w-min
+110. Ancho máximo basado en el contenido intrínseco extendido: w-max
+111. Ancho automático adaptativo según el flujo base del navegador: w-auto
+112. Ancho dinámico calculado con funciones matemáticas arbitrarias (w-[calc(100%-20px)])
+113. Ancho mínimo restrictivo para evitar colapsos de elementos: min-w-{tamaño}
+114. Ancho máximo restrictivo para control del ancho de lectura: max-w-{tamaño}
+115. Ancho máximo limitado al break del contenedor adaptativo por defecto: max-w-7xl
+116. Alto fijo basado en la escala por defecto de Tailwind CSS: h-{tamaño}
+117. Alto fluido basado en porcentajes exactos de fracciones comunes: h-1/3
+118. Alto total equivalente al 100% de la caja disponible del padre: h-full
+119. Alto total ajustado al viewport de la pantalla de visualización: h-screen
+120. Alto mínimo restrictivo de seguridad para secciones de tarjetas: min-h-full
+121. Alto mínimo ajustado completamente al viewport del navegador: min-h-screen
+122. Alto máximo restrictivo para control de desbordamientos internos: max-h-sm
+123. Configuración de dimensiones idénticas instantáneas con tamaño cuadrado: size-4
+124. Configuración de dimensiones rectangulares arbitrarias con utilidades size (size-[20px_40px])
+
+[BLOQUE 5: TIPOGRAFÍA, FUENTES, LECHADO Y CONTORNOS DE TEXTO (v4)]
+125. Tamaño de fuente de texto base ultra compacto para microletras: text-xs
+126. Tamaño de fuente de texto pequeño para textos secundarios: text-sm
+127. Tamaño de fuente de texto mediano estándar para párrafos base: text-base
+128. Tamaño de fuente de texto grande para subtítulos destacados: text-lg
+129. Tamaños de fuentes de texto gigantes para títulos (text-xl hasta text-9xl)
+130. Modificación del interlineado o lechado vertical de textos: leading-none
+131. Interlineado compacto ajustado para títulos de varias líneas: leading-tight
+132. Interlineado cómodo por defecto para bloques de párrafos largos: leading-relaxed
+133. Interlineado amplio para composiciones tipográficas espaciadas: leading-loose
+134. Interlineado con valores exactos en píxeles o rems arbitrarios (leading-[32px])
+135. Espaciado horizontal entre letras o tracking ultra ajustado: tracking-tighter
+136. Espaciado horizontal entre letras ajustado estándar: tracking-tight
+137. Espaciado horizontal entre letras normal por defecto del tipo: tracking-normal
+138. Espaciado horizontal entre letras amplio para títulos en mayúsculas: tracking-wide
+139. Espaciado de letras expansivo para estilos de diseño minimalistas: tracking-widest
+140. Grosor de tipografía extra delgado para fuentes estilizadas: font-thin
+141. Grosor de tipografía ligero para contrastes finos: font-light
+142. Grosor de tipografía normal correspondiente al peso regular: font-normal
+143. Grosor de tipografía seminegro para subtítulos y énfasis: font-medium
+144. Grosor de tipografía negro estándar para titulares de impacto: font-bold
+145. Grosor de tipografía ultra negro para pesos tipográficos máximos: font-black
+146. Selección de familia tipográfica limpia sin serifas por defecto: font-sans
+147. Selección de familia tipográfica tradicional con serifas elegantes: font-serif
+148. Selección de familia tipográfica monoespaciada para bloques de código: font-mono
+149. Alineación del bloque de texto hacia el extremo izquierdo: text-left
+150. Alineación del bloque de texto en el centro geométrico de la caja: text-center
+151. Alineación del bloque de texto hacia el extremo derecho de la caja: text-right
+152. Alineación del bloque de texto justificado con distribución homogénea: text-justify
+153. Color de texto mapeado a la paleta base del sistema (text-gray-800)
+154. Control de opacidad del texto mediante barra diagonal en v4 (text-blue-600/70)
+155. Color de texto personalizado instantáneo mediante valor hexadecimal (text-[#2d3748])
+156. Decoración de texto con línea de subrayado inferior estándar: underline
+157. Decoración de texto con línea de tachado central para precios anteriores: line-through
+158. Eliminación completa de decoraciones de texto aplicadas previamente: no-underline
+159. Estilo de decoración de texto con trazo continuo tradicional: underline-solid
+160. Estilo de decoración de texto con trazo de puntos finos: underline-dotted
+161. Estilo de decoración de texto con trazo de líneas segmentadas: underline-dashed
+162. Estilo de decoración de texto con trazo ondulado dinámico: underline-wavy
+163. Color específico aplicado al trazo de la decoración del texto: decoration-red-500
+164. Grosor exacto de la línea de subrayado del texto en la caja: decoration-2
+165. Desplazamiento vertical de la línea de subrayado del texto: underline-offset-4
+166. Transformación del texto completo a letras mayúsculas uniformes: uppercase
+167. Transformación del texto completo a letras minúsculas uniformes: lowercase
+168. Transformación del texto con mayúscula inicial en cada palabra: capitalize
+169. Prevención total de transformaciones tipográficas previas del flujo: normal-case
+170. Control de truncado automático de texto con puntos suspensivos: truncate
+171. Control de desbordamiento de texto largo forzando saltos de línea: break-words
+172. Prevención de saltos de línea manteniendo el texto en una sola fila: whitespace-nowrap
+173. Gestión avanzada de saltos de línea respetando los espacios del código: whitespace-pre
+174. Nuevas utilidades de sombra de texto integradas nativamente en v4.1: text-shadow-sm
+175. Ajuste de tamaño medio para sombras de texto en v4.1: text-shadow-md
+176. Sombras de texto gigantescas con soporte nativo de la v4.1: text-shadow-lg
+177. Asignación de color directo a las sombras de texto en v4.1: text-shadow-red-500
+178. Nuevas utilidades de control de envoltura de desbordamiento en v4.1: wrap-break-word
+179. Control de comportamiento de envoltura en cualquier punto del texto en v4.1: wrap-anywhere
+
+[BLOQUE 6: COMPOSICIÓN DE CONTENEDORES CON FLEXBOX Y GRID MILIMÉTRICO]
+180. Activación de la caja de maquetación flexible en el elemento: flex
+181. Activación de la caja flexible en línea para flujo de textos: inline-flex
+182. Dirección del flujo flexible dispuesto en filas horizontales directas: flex-row
+183. Dirección del flujo flexible dispuesto en filas horizontales invertidas: flex-row-reverse
+184. Dirección del flujo flexible dispuesto en columnas verticales directas: flex-col
+185. Dirección del flujo flexible dispuesto en columnas verticales invertidas: flex-col-reverse
+186. Permitir el salto de línea de los elementos hijos si desbordan el ancho: flex-wrap
+187. Forzar a los elementos hijos a mantenerse en una única línea flexible: flex-nowrap
+188. Permitir el salto de línea flexible dispuesto en orden inverso de filas: flex-wrap-reverse
+189. Control del tamaño base de inicio de los elementos hijos flexibles: basis-1/4
+190. Permitir el crecimiento del elemento hijo si hay espacio extra (v4): grow
+191. Prevenir que el elemento hijo reduzca su tamaño si falta espacio (v4): shrink-0
+192. Asignación de proporciones de crecimiento avanzadas arbitrarias (grow-)
+193. Activación de la caja de maquetación en rejilla o cuadrícula: grid
+194. Activación de rejilla en línea para layouts incrustados en texto: inline-grid
+195. Definición explícita de columnas en la rejilla (grid-cols-1 a grid-cols-12)
+196. Rejillas de columnas con medidas arbitrarias exactas (grid-cols-[200px_1fr_300px])
+197. Definición explícita de filas en la rejilla (grid-rows-1 a grid-rows-6)
+198. Control del tramo de columnas que absorbe un elemento hijo interno: col-span-3
+199. Control de la columna exacta de inicio de un elemento en la rejilla: col-start-2
+200. Control de la columna exacta de finalización de un elemento en la rejilla: col-end-5
+201. Control del tramo de filas que absorbe un elemento hijo interno: row-span-2
+202. Control de la fila exacta de inicio de un elemento en la rejilla: row-start-1
+203. Control de la fila exacta de finalización de un elemento en la rejilla: row-end-3
+204. Dirección del flujo automático de elementos nuevos dentro del grid: grid-flow-row
+205. Dirección del flujo automático forzando la creación de columnas: grid-flow-col
+206. Flujo automático denso para rellenar huecos vacíos de la rejilla: grid-flow-row-dense
+207. Configuración del tamaño por defecto de columnas automáticas: auto-cols-max
+208. Configuración del tamaño por defecto de filas automáticas del grid: auto-rows-min
+209. Separación uniforme general entre filas y columnas de la caja: gap-{tamaño}
+210. Separación exclusiva entre las columnas de la rejilla o flexbox: gap-x-{tamaño}
+211. Separación exclusiva entre las filas de la rejilla o flexbox: gap-y-{tamaño}
+212. Separaciones milimétricas con valores arbitrarios en el grid (gap-[11px])
+213. Alineación del contenido del bloque en el eje principal al inicio: justify-start
+214. Alineación del contenido en el eje principal al centro geométrico: justify-center
+215. Alineación del contenido en el eje principal al extremo final de la caja: justify-end
+216. Distribución con separación homogénea entre los elementos internos: justify-between
+217. Distribución con separación homogénea alrededor de cada elemento interno: justify-around
+218. Distribución con espacio idéntico en todos los extremos intermedios: justify-evenly
+219. Alineación de elementos individuales dentro del eje principal: justify-items-center
+220. Autoalineación específica del elemento actual en el eje principal: justify-self-end
+221. Alineación de los elementos en el eje secundario cruzado al inicio: items-start
+222. Alineación de los elementos en el eje secundario cruzado al centro: items-center
+223. Alineación de los elementos en el eje secundario cruzado al final: items-end
+224. Alineación basada en la línea base tipográfica del texto interno: items-baseline
+225. Estiramiento total de los elementos para cubrir el alto del contenedor: items-stretch
+226. Nueva alineación de última línea base tipográfica en v4.1: items-baseline-last
+227. Alineación del contenido de varias líneas en el eje secundario: content-center
+228. Distribución de líneas con separación intermedia en el eje secundario: content-between
+229. Autoalineación específica del elemento actual en el eje secundario: self-center
+230. Nueva autoalineación de última línea base tipográfica en v4.1: self-baseline-last
+231. Nuevas utilidades de alineación segura para prevenir desbordamientos en v4.1: justify-items-safe-center
+232. Alteración del orden físico de renderizado de elementos en el layout: order-first
+233. Posicionamiento del elemento en el último lugar del orden del flujo: order-last
+234. Control numérico preciso del orden de los elementos hijos directos: order-3
+
+[BLOQUE 7: DISEÑO DE BORDES, CONTORNOS (OUTLINES) Y EFECTOS DE RING]
+235. Grosor de borde perimetral uniforme por defecto de la caja: border
+236. Eliminación completa de bordes físicos visibles en el elemento: border-0
+237. Grosores de bordes específicos (border-2, border-4, border-8)
+238. Grosor de borde limitado de forma exclusiva al costado superior: border-t-2
+239. Grosor de borde limitado de forma exclusiva al costado derecho: border-r-4
+240. Grosor de borde limitado de forma exclusiva al costado inferior: border-b-2
+241. Grosor de borde limitado de forma exclusiva al costado izquierdo: border-l-4
+242. Color del borde perimetral sincronizado con la paleta de diseño (border-gray-200)
+243. Control de la opacidad del borde mediante barra diagonal en v4 (border-red-500/30)
+244. Estilo de trazo de borde continuo tradicional del navegador: border-solid
+245. Estilo de trazo de borde compuesto por puntos redondos finos: border-dotted
+246. Estilo de trazo de borde compuesto por guiones o segmentos: border-dashed
+247. Ocultamiento de bordes mediante líneas dobles paralelas clásicas: border-double
+248. Eliminación visual de bordes manteniendo la estructura de la caja: border-none
+249. Esquinas redondeadas sutiles en la caja (v4 cambia a escala xs): rounded-xs
+250. Esquinas redondeadas por defecto estándar del framework (v4): rounded-sm
+251. Esquinas redondeadas de tamaño medio para tarjetas estándar: rounded-md
+252. Esquinas redondeadas amplias para botones y elementos contenedores: rounded-lg
+253. Redondeado máximo para crear estructuras circulares o de píldora: rounded-full
+254. Redondeado exclusivo limitado a las esquinas del borde superior: rounded-t-lg
+255. Redondeado exclusivo limitado a las esquinas del borde derecho: rounded-r-md
+256. Redondeado exclusivo limitado a las esquinas del borde inferior: rounded-b-xl
+257. Redondeado exclusivo limitado a las esquinas del borde izquierdo: rounded-l-lg
+258. Redondeado específico milimétrico usando corchetes arbitrarios (rounded-[24px])
+259. Línea divisoria interna automática entre elementos de listas: divide-y
+260. Línea divisoria interna automática en listas dispuestas horizontalmente: divide-x
+261. Color de las líneas divisorias internas automáticas del layout: divide-gray-200
+262. Modificación de la opacidad de líneas divisorias mediante barra diagonal: divide-gray-200/50
+263. Estilo de trazo segmentado para las líneas divisorias internas: divide-dashed
+264. Inversión del orden de aplicación de las líneas divisorias internas: divide-y-reverse
+265. Contorno externo de enfoque nativo ocultado en v4: outline-hidden
+266. Contorno externo visible con trazo continuo sobre la caja: outline-solid
+267. Ajuste del grosor del contorno externo de enfoque del elemento: outline-2
+268. Asignación de color directo al contorno externo de interacción: outline-blue-500
+269. Separación física entre el contorno externo y el borde de la caja: outline-offset-2
+270. Activación del efecto de anillo o ring de la v4 (v4 inicializa en ring-3): ring
+271. Ajuste preciso del grosor del anillo perimetral del framework: ring-4
+272. Asignación de color directo al efecto de anillo del elemento: ring-blue-400
+273. Ajuste de opacidad en el efecto de anillo mediante barra diagonal: ring-blue-400/40
+274. Separación física o grosor del borde interno de desfase del anillo: ring-offset-2
+275. Asignación de color al espacio de desfase interno del anillo de enfoque: ring-offset-black
+
+[BLOQUE 8: INTERACTIVIDAD, ESTADOS DINÁMICOS Y PSEUDO-CLASES]
+276. Modificador para aplicar estilos cuando el cursor pasa por encima: hover:bg-blue-600
+277. Modificador para aplicar estilos durante la presión del click: active:bg-blue-700
+278. Modificador para aplicar estilos cuando el elemento recibe el foco: focus:ring-2
+279. Estilos de enfoque condicionados a la navegación por teclado física: focus-visible:outline-2
+280. Estilos aplicados al contenedor cuando un hijo interno recibe el foco: focus-within:shadow-lg
+281. Estilos condicionados al estado deshabilitado de botones y campos: disabled:opacity-50
+282. Estilos basados en la selección de opciones de checkboxes o radio buttons: checked:bg-indigo-600
+283. Estilos condicionados para elementos en estado indeterminado de selección: indeterminate:bg-gray-400
+284. Estilos de validación en tiempo real cuando el valor introducido es correcto: valid:border-green-500
+285. Estilos de validación en tiempo real cuando el valor es incorrecto: invalid:border-red-500
+286. Estilos aplicados a campos de entrada requeridos obligatorios: required:border-amber-500
+287. Estilos aplicados cuando un campo obligatorio está vacío o incompleto: placeholder-shown:border-gray-300
+288. Estilos condicionados a que un campo de entrada sea de solo lectura: read-only:bg-gray-100
+289. Nuevos estilos de validación post-interacción de usuario en v4.1: user-valid:border-emerald-600
+290. Estilos aplicados exclusivamente al primer elemento de una lista de hijos: first:bg-slate-100
+291. Estilos aplicados exclusivamente al último elemento de una lista de hijos: last:border-b-0
+292. Estilos aplicados a los elementos que ocupan posiciones impares en listas: odd:bg-gray-50
+293. Estilos aplicados a los elementos que ocupan posiciones pares en listas: even:bg-white
+294. Estilos condicionados a que el elemento sea hijo único en su contenedor: only:m-auto
+295. Estilos condicionados para los primeros elementos de tipos específicos: first-of-type:font-bold
+296. Estilos condicionados para los últimos elementos de tipos específicos: last-of-type:font-normal
+297. Estilos de pseudo-elementos para modificar la primera letra de párrafos: first-letter:text-3xl
+298. Estilos de pseudo-elementos para modificar la primera línea de texto: first-line:uppercase
+299. Estilos de personalización aplicados al texto seleccionado por el usuario: selection:bg-yellow-200
+300. Estilos de personalización aplicados al marcador de lista por defecto: marker:text-blue-500
+301. Estilos aplicados al botón de carga de archivos en inputs de tipo file: file:rounded-md
+302. Modificador de grupo para cambiar hijos basados en el padre: group-hover:opacity-100
+303. Modificador de grupo condicionado al enfoque del elemento padre de la caja: group-focus:text-blue-600
+304. Modificador de grupo basado en el estado activo de presión del elemento padre: group-active:scale-95
+305. Identificación de grupos específicos mediante nombres asignados en corchetes: group-hover/[tarjeta]:translate-x-2
+306. Estilos condicionados al estado de hermanos adyaccentes del flujo: peer-checked:block
+307. Estilos condicionados al estado de un hermano específico con nombre propio: peer-invalid/[correo]:text-red-500
+308. Estilos condicionados basados en la coincidencia de selectores lógicos: has-[:checked]:bg-indigo-50
+309. Nuevo modificador de negación lógica nativo incorporado en la v4: not-hover:opacity-80
+310. Cambios en el estilo del cursor al pasar sobre elementos interactivos: cursor-pointer
+311. Cambios en el estilo del cursor para indicar que una acción está bloqueada: cursor-not-allowed
+312. Cambios en el estilo del cursor para indicar un proceso de carga activo: cursor-wait
+313. Desactivación completa de eventos del puntero e interacciones físicas: pointer-events-none
+314. Restauración completa de los eventos del puntero por defecto del sistema: pointer-events-auto
+315. Nuevos modificadores de precisión táctil para dispositivos en v4.1: pointer-fine:opacity-100
+316. Modificadores para punteros gruesos orientados a pantallas táctiles en v4.1: pointer-coarse:p-4
+317. Control del comportamiento del desplazamiento o scroll continuo en cajas: scroll-smooth
+318. Control del ajuste de líneas de scroll para snapping de imágenes: scroll-snap-x
+319. Control de la alineación de parada de elementos en scroll snap: snap-center
+
+[BLOQUE 9: RESPONSIVO EXTREMO, MODO OSCURO Y NATIVAS CONTAINER QUERIES]
+320. Punto de ruptura responsivo para pantallas pequeñas (móviles horizontales): sm:grid-cols-2
+321. Punto de ruptura responsivo para pantallas medianas de tabletas estándar: md:flex-row
+322. Punto de ruptura responsivo para pantallas de computadoras portátiles comunes: lg:max-w-4xl
+323. Punto de ruptura responsivo para pantallas de computadoras de escritorio amplias: xl:block
+324. Punto de ruptura responsivo para monitores y pantallas de gran formato: 2xl:text-left
+325. Estilos responsivos basados en rangos máximos mediante sintaxis de corchetes: max-md:p-2
+326. Estilos aplicados cuando el sistema operativo tiene el modo oscuro activo: dark:bg-slate-900
+327. Combinación estricta de modo oscuro y puntos de ruptura responsivos: dark:lg:border-gray-700
+328. Nuevas consultas de contenedor nativas de la v4 sin plugins externos: @container
+329. Estilos de hijos basados en contenedores pequeños con container queries (v4): @sm:p-2
+330. Estilos basados en contenedores medianos con container queries en v4: @md:flex
+331. Estilos basados en contenedores de gran tamaño con container queries en v4: @lg:text-xl
+332. Identificación y escucha de contenedores específicos con nombres propios (v4): @lg/[sidebar]:hidden
+333. Estilos condicionados a la preferencia de reducción de movimiento del sistema: motion-safe:animate-bounce
+334. Estilos aplicados cuando el usuario prefiere animaciones deshabilitadas: motion-reduce:transition-none
+335. Estilos condicionados a la orientación física vertical del dispositivo del usuario: portrait:hidden
+336. Estilos condicionados a la orientación física horizontal de la pantalla: landscape:flex
+337. Estilos aplicados exclusivamente cuando el documento se envía a impresión física: print:text-black
+338. Nueva utilidad para dar soporte a hojas de estilo sin Javascript activo en v4.1: noscript:block
+339. Nuevos modificadores para esquemas de colores invertidos del sistema en v4.1: inverted-colors:p-6
+
+[BLOQUE 10: POSICIONAMIENTO, OPTIMIZACIÓN, MÁSCARAS Y EFECTOS AVANZADOS]
+340. Posicionamiento estático por defecto siguiendo el flujo del documento: static
+341. Posicionamiento relativo que sirve como eje de coordenadas para hijos: relative
+342. Posicionamiento absoluto para desencajar elementos fuera del flujo base: absolute
+343. Posicionamiento fijo pegado permanentemente a las coordenadas del viewport: fixed
+344. Posicionamiento pegajoso que se ancla al alcanzar un límite en el scroll: sticky
+345. Ubicación matemática en las cuatro esquinas de elementos posicionados: inset-0
+346. Ubicación matemática de la coordenada superior del elemento absoluto: top-2
+347. Ubicación matemática de la coordenada derecha del elemento absoluto: right-4
+348. Ubicación matemática de la coordenada inferior del elemento absoluto: bottom-2
+349. Ubicación matemática de la coordenada izquierda del elemento absoluto: left-4
+350. Ubicación en base a coordenadas milimétricas arbitrarias específicas (top-[14px])
+351. Control del orden de apilamiento vertical de capas superpuestas: z-0 a z-50
+352. Control de apilamiento con valores negativos o arbitrarios exactos (z-[-1] o z-)
+353. Opacidad general de visibilidad aplicable a todo el elemento de la interfaz: opacity-50
+354. Efecto de desenfoque gaussiano aplicado directamente sobre imágenes o capas: blur-sm
+355. Efectos de desenfoque gaussiano de alta intensidad sobre elementos visuales: blur-xl
+356. Nuevas sombras de caja internas detalladas añadidas en la v4: inset-shadow-xs
+357. Ajuste de tamaño medio para sombras internas nativas de la v4: inset-shadow-sm
+358. Nuevas utilidades de escalado de campos de texto automáticos en v4: field-sizing-content
+359. Nueva propiedad para marcar elementos no interactivos de forma nativa en v4: inert
+360. Soporte de estilos de inicio de transiciones de animaciones en la v4: @starting-style
+361. Nuevas utilidades de máscara de imagen base incorporadas en la v4.1: mask-image-[url('/capa.png')]
+362. Nuevas configuraciones de repetición de máscaras de diseño en v4.1: mask-repeat-no-repeat
+363. Nuevas utilidades de sombras coloreadas con opacidad integrada en v4.1: drop-shadow-red-500/40
+364. Ocultamiento de contenidos exclusivo para lectores de pantalla de accesibilidad: sr-only
+365. Restauración visual de elementos previamente ocultos con selectores de accesibilidad: not-sr-only
+================================================================================
