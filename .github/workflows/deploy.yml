@@ -2,7 +2,7 @@ name: Deploy Portafolio a GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Si tu rama principal se llama master, cambia main por master
+    branches: ["main"] # Cambia a "master" si tu rama principal se llama así
 
 permissions:
   contents: read
@@ -28,10 +28,10 @@ jobs:
         with:
           node-version: 20
 
-      # 1. Compilar subproyecto proyecto-shiki
-      - name: Build proyecto-shiki
+      # 1. Compilar subproyecto Shiki
+      - name: Build Shiki
         run: |
-          cd proyecto-shiki
+          cd Shiki
           npm ci
           npm run build
 
@@ -47,7 +47,7 @@ jobs:
         run: |
           mkdir public_dist
           cp index.html public_dist/
-          cp -r proyecto-shiki/dist public_dist/proyecto-shiki
+          cp -r Shiki/dist public_dist/Shiki
           cp -r TailwindCSS/dist public_dist/TailwindCSS
 
       # 4. Subir artefacto y desplegar en GitHub Pages
