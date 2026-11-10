@@ -1,0 +1,61 @@
+name: Deploy Portafolio a GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Si tu rama principal se llama master, cambia main por master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 1. Compilar subproyecto proyecto-shiki
+      - name: Build proyecto-shiki
+        run: |
+          cd proyecto-shiki
+          npm ci
+          npm run build
+
+      # 2. Compilar subproyecto TailwindCSS
+      - name: Build TailwindCSS
+        run: |
+          cd TailwindCSS
+          npm ci
+          npm run build
+
+      # 3. Organizar los archivos procesados en una carpeta final
+      - name: Preparar artefacto de despliegue
+        run: |
+          mkdir public_dist
+          cp index.html public_dist/
+          cp -r proyecto-shiki/dist public_dist/proyecto-shiki
+          cp -r TailwindCSS/dist public_dist/TailwindCSS
+
+      # 4. Subir artefacto y desplegar en GitHub Pages
+      - name: Subir artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public_dist'
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
